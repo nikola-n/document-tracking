@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+\Illuminate\Support\Facades\Auth::loginUsingId(1);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +30,6 @@ Route::get('/services', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+
+Route::get('documents/{document}', 'DocumentsController@show')->name('documents.show');
